@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue; 
+}
+
+.container{
+    width: 1000px;
+    height: 520px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+    border: solid blue 1px;
+}
+
+.gridContainer{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+
+}
+
+.displayInfo{
+    border: solid 2px red   ;
+    height: 520px;
+}
+
+.bg-color{
+    background-color: red;
+}
