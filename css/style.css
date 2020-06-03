@@ -42,3 +42,39 @@ body{
 .bg-color{
     background-color: red;
 }
+
+
+.playerX{
+
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin: auto;
+}
+.playerX:after {
+    content: '';
+    height: 60px;
+    border-left: 2px solid black;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 28px;
+}
+
+.playerX:before {
+    content: '';
+    height: 60px;
+    border-left: 2px solid black;
+    position: absolute;
+    transform: rotate(-45deg);
+
+}
+.playerO{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border-radius: 50% 50%;
+} 
+
+/* #player1{
+    background-color: chocolate;
+} */
