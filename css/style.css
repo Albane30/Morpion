@@ -75,6 +75,16 @@ body{
     border-radius: 50% 50%;
 } 
 
-/* #player1{
-    background-color: chocolate;
-} */
+body {
+    margin:0;
+    padding:0;
+ }
+ #divChrono, #formChrono  {
+    margin:10px;
+    padding:10px;
+    background-color:DarkSeaGreen;
+    font-family:Arial;
+    font-size:20px;
+    text-align:center;
+    color:Crimson;
+ }
