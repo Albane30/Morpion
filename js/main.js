@@ -24,10 +24,10 @@ class Morpion
                  <div class="square player" id="9"></div>
          </div>
              <div class="displayInfo">
-             <p class="joueur" id="player1">player1 = "x" </p><br>
-             <p class="joueur" id="player2">player2 = "o"</p>
+             <p class="joueur" id="player1"> PLAYER 1 = x </p><br>
+             <p class="joueur" id="player2"> PLAYER 1 = o</p>
              <div class="buttonPlay">
-             <button>Play</button>
+             <button type="button" class="btn btn-outline-secondary"> - PLAY - </button>
              </div>
              </div>
              `
@@ -42,7 +42,7 @@ class Morpion
 
    start(){
     this.button.addEventListener("click", () => {
-        this.player1.style.backgroundColor = "yellow";
+        this.player1.style.backgroundColor = "crimson";
         this.actualPlayer = this.player1
         fStart()
         
@@ -59,7 +59,7 @@ class Morpion
                 this.xGame.push(square["id"])
                 this.actualPlayer = this.player2
                 this.player1.style.backgroundColor = "";
-                this.player2.style.backgroundColor = "yellow";
+                this.player2.style.backgroundColor = "crimson";
                 this.win()
                
             }
@@ -69,7 +69,7 @@ class Morpion
                 this.oGame.push(square["id"])
                 this.actualPlayer = this.player1
                 this.player2.style.backgroundColor = "";
-                this.player1.style.backgroundColor = "yellow";
+                this.player1.style.backgroundColor = "crimson";
                 this.win()
                 
         
