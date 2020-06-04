@@ -23,134 +23,141 @@ document.querySelector(".container").innerHTML =
             </div>
             `
 
-let xGame = []/*  array des coups joués avec croix */
-let oGame = []   /* array des coups joués avec ronds */
-let button = document.querySelector(".buttonPlay")
-let player1 = document.querySelector("#player1")
-let player2 = document.querySelector("#player2")
-let actualPlayer 
 
-button.addEventListener("click", function(){
-    player1.style.backgroundColor = "yellow";
-    actualPlayer = player1
-})
-
-let squares = document.querySelectorAll(".square")
-squares.forEach(square => square.addEventListener("click",function(e)
+class Morpion
 {
-   
- if(e.target.classList.contains("player") && actualPlayer === player1)
- {
-     e.target.classList.replace("player","playerX")
-     xGame.push(square["id"])
-     console.log(xGame.sort())
-     actualPlayer = player2
-     player1.style.backgroundColor = "";
-     player2.style.backgroundColor = "yellow";
-}
+    
 
-  if(e.target.classList.contains("player") && actualPlayer === player2){
-        e.target.classList.replace("player","playerO")
-        oGame.push(square["id"])
-         console.log(oGame.sort()) 
-        actualPlayer = player1
-        player2.style.backgroundColor = "";
-        player1.style.backgroundColor = "yellow";
-
-       }
-       else {
-           e.target.classList.remove("player")
-          }
-
-          let squareId = square["id"]
-          
-          
-          let squareClass = square.classList[1]
-
-
- function win()
+    constructor()
     {
- /* win X   */  
-if(xGame.includes("1") && xGame.includes("2") && xGame.includes("3"))
-        {            
-            alert("Player1  win")
-        }
-if(xGame.includes("4") && xGame.includes("5") && xGame.includes("6"))
-        {
-            alert("Player1  win")
-        }
-if(xGame.includes("7") && xGame.includes("8") && xGame.includes("9"))
-        {
-            alert("Player1  win")
-        }
-if(xGame.includes("1") && xGame.includes("4") && xGame.includes("7"))
-        {
-            alert("Player1  win")
-        }
-if(xGame.includes("2") && xGame.includes("5") && xGame.includes("8"))
-        {
-            alert("Player1  win")
-        }
-if(xGame.includes("3") && xGame.includes("6") && xGame.includes("9"))
-        {
-            alert("Player1  win")
-        }
-if(xGame.includes("1") && xGame.includes("5") && xGame.includes("9"))
-        {
-            alert("Player1  win")
-        }
-if(xGame.includes("3") && xGame.includes("5") && xGame.includes("7"))
-        {
-            alert("Player1  win")
-        }
+        this.player1 = document.querySelector("#player1");
+        this.player2 = document.querySelector("#player2");
+        this.actualPlayer 
+        this.xGame = [];
+        this.oGame = [];
+        this.button = document.querySelector(".buttonPlay");
+        this.squares = document.querySelectorAll(".square")
+    }
+
+   start(){
+    this.button.addEventListener("click", () => {
+        this.player1.style.backgroundColor = "yellow";
+        this.actualPlayer = this.player1
+        
+    })
+    this.play()
+   }
+
+   play()
+   {
+    this.squares.forEach(square => square.addEventListener("click", (e) => {
+        if(e.target.classList.contains("player") && this.actualPlayer === this.player1)
+            {
+                e.target.classList.replace("player","playerX")
+                this.xGame.push(square["id"])
+                this.actualPlayer = this.player2
+                this.player1.style.backgroundColor = "";
+                this.player2.style.backgroundColor = "yellow";
+                this.win()
+            }
+        if(e.target.classList.contains("player") && this.actualPlayer === this.player2)
+            {
+                e.target.classList.replace("player","playerO")
+                this.oGame.push(square["id"])
+                this.actualPlayer = this.player1
+                this.player2.style.backgroundColor = "";
+                this.player1.style.backgroundColor = "yellow";
+                this.win()
+        
+            }
+            else {
+                   e.target.classList.remove("player")
+                  }
+        })
+        ) 
+    }
+    win()
+    {
+         if(this.xGame.includes("1") && this.xGame.includes("2") && this.xGame.includes("3"))
+                {            
+                    alert("Player1  win")
+                }
+        if(this.xGame.includes("4") && this.xGame.includes("5") && this.xGame.includes("6"))
+                {
+                    alert("Player1  win")
+                }
+        if(this.xGame.includes("7") && this.xGame.includes("8") && this.xGame.includes("9"))
+                {
+                    alert("Player1  win")
+                }
+        if(this.xGame.includes("1") && this.xGame.includes("4") && this.xGame.includes("7"))
+                {
+                    alert("Player1  win")
+                }
+        if(this.xGame.includes("2") && this.xGame.includes("5") && this.xGame.includes("8"))
+                {
+                    alert("Player1  win")
+                }
+        if(this.xGame.includes("3") && this.xGame.includes("6") && this.xGame.includes("9"))
+                {
+                    alert("Player1  win")
+                }
+        if(this.xGame.includes("1") && this.xGame.includes("5") && this.xGame.includes("9"))
+                {
+                    alert("Player1  win")
+                }
+        if(this.xGame.includes("3") && this.xGame.includes("5") && this.xGame.includes("7"))
+                {
+                    alert("Player1  win")
+                }
 
 
-       /*  win O */
-       if(oGame.includes("1") && oGame.includes("2") && oGame.includes("3"))
-        {            
-            alert("Player2  win")
-        }
-if(oGame.includes("4") && oGame.includes("5") && oGame.includes("6"))
-        {
-            alert("Player2  win")
-        }
-if(oGame.includes("7") && oGame.includes("8") && oGame.includes("9"))
-        {
-            alert("Player2  win")
-        }
-if(oGame.includes("1") && oGame.includes("4") && oGame.includes("7"))
-        {
-            alert("Player2  win")
-        }
-if(oGame.includes("2") && oGame.includes("5") && oGame.includes("8"))
-        {
-            alert("Player2  win")
-        }
-if(oGame.includes("3") && oGame.includes("6") && oGame.includes("9"))
-        {
-            alert("Player2  win")
-        }
-if(oGame.includes("1") && oGame.includes("5") && oGame.includes("9"))
-        {
-            alert("Player2  win")
-        }
-if(oGame.includes("3") && oGame.includes("5") && oGame.includes("7"))
-        {
-            alert("Player2  win")
-        }
+            if(this.oGame.includes("1") && this.oGame.includes("2") && this.oGame.includes("3"))
+                {            
+                    alert("Player2  win")
+                }
+        if(this.oGame.includes("4") && this.oGame.includes("5") && this.oGame.includes("6"))
+                {
+                    alert("Player2  win")
+                }
+        if(this.oGame.includes("7") && this.oGame.includes("8") && this.oGame.includes("9"))
+                {
+                    alert("Player2  win")
+                }
+        if(this.oGame.includes("1") && this.oGame.includes("4") && this.oGame.includes("7"))
+                {
+                    alert("Player2  win")
+                }
+        if(this.oGame.includes("2") && this.oGame.includes("5") && this.oGame.includes("8"))
+                {
+                    alert("Player2  win")
+                }
+        if(this.oGame.includes("3") && this.oGame.includes("6") && this.oGame.includes("9"))
+                {
+                    alert("Player2  win")
+                }
+        if(this.oGame.includes("1") && this.oGame.includes("5") && this.oGame.includes("9"))
+                {
+                    alert("Player2  win")
+                }
+        if(this.oGame.includes("3") && this.oGame.includes("5") && this.oGame.includes("7"))
+                {
+                    alert("Player2  win")
+                }
 
-    } 
- win()  
-}))
+            } 
 
+        replay()
+        {
+            if(this.win()){
+
+                this.xGame = [];
+                this.oGame = [];;
+                this.squares = document.querySelectorAll(".square")
+            }
+        }
    
+}
+const game = new Morpion;
+game.start()
 
-
-
- function Morpion()
-{
-    let grid = document.querySelectorAll(".square")
-    let X = "X"
-    let O = "O"
-
-}  
