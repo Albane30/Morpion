@@ -12,7 +12,8 @@ body{
     grid-template-columns: 3fr 1fr;
     justify-items: center;
     align-items: center;
-    border: solid blue 1px;
+    
+
 }
 
 .gridContainer{
@@ -23,6 +24,7 @@ body{
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     padding: 10px;
+    border: solid 1px #aaa;
 
 }
 
@@ -35,13 +37,11 @@ body{
 }
 
 .displayInfo{
-    border: solid 2px red   ;
+    border: solid 2px red;
+    width: 200px;
     height: 520px;
 }
 
-.bg-color{
-    background-color: red;
-}
 
 
 .playerX{
@@ -50,6 +50,7 @@ body{
     height: 60px;
     position: relative;
     margin: auto;
+    border: none;
 }
 .playerX:after {
     content: '';
@@ -88,3 +89,5 @@ body {
     text-align:center;
     color:Crimson;
  }
+
+ 

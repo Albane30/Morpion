@@ -82,6 +82,7 @@ class Morpion
     }
     win()
     {
+        /* gagnant avec croix */
          if(this.xGame.includes("1") && this.xGame.includes("2") && this.xGame.includes("3"))
                 {            
                     alert("Player1  win")
@@ -131,7 +132,7 @@ class Morpion
 
                 }
 
-
+        /* gagnant avec ronds */
             if(this.oGame.includes("1") && this.oGame.includes("2") && this.oGame.includes("3"))
                 {            
                     alert("Player2  win")
@@ -180,6 +181,16 @@ class Morpion
                     document.location.reload(true);
 
                 }
+
+                /* match nul */
+        if((this.xGame.length === 5) && (this.oGame.length === 4)){
+            {            
+                alert("Match nul !")
+                console.log(this.xGame.length)
+                document.location.reload(true);
+                
+            }
+        }
 
             } 
 
